@@ -1,9 +1,10 @@
 import { getCustomRepository } from "typeorm"
+import { Tag } from "../entities/Tag";
 import { AppError } from "../error/AppError";
 import { TagsRepository } from "../repositories/TagsRepository";
 
 class CreateTagsService {
-  async execute(name: string): Promise<Object>{
+  async execute(name: string): Promise<Tag>{
     const tagsRepository = getCustomRepository(TagsRepository);
 
     if(!name){
